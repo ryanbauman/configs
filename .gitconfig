@@ -1,0 +1,32 @@
+[user]
+    name = Ryan Bauman
+    #email = ryanbauman@gmail.com
+    email = rbauman@immuta.com
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[alias]
+  co = checkout
+  st = status
+  l2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+  l1 = log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+  l  = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+  la = log --graph --decorate --pretty=oneline --abbrev-commit --date=short
+  ll = log --stat --abbrev-commit
+[push]
+    default = simple
+[branch]
+    autosetuprebase = always
+[rerere]
+    enabled = true
+[core]
+    autocrlf = input
+[diff "odf"]
+    textconv = odt2txt
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
+[credential]
+    helper = cache --timeout=3600
